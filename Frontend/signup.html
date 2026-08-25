@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign up</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="auth-page">
+  <!-- Header: logo click karne par student homepage par wapas ja sakta hai. -->
+  <header class="header">
+    <a class="logo" href="index.html"><img src="sih-logo.png" alt="SIH logo" /><span class="logo-name">SMART INDIA<br />HACKATHON<br />2026</span></a>
+    <a class="login-button" href="login.html">Log in</a>
+  </header>
+
+  <main class="auth-main">
+    <!-- Sign up card: naya student apna Smart India Hackathon account banayega. -->
+    <section class="auth-card" aria-labelledby="signup-title">
+      <h1 id="signup-title">Sign up</h1>
+
+      <!-- Form: abhi frontend form hai; backend baad me connect kiya ja sakta hai. -->
+      <form class="auth-form" id="signupForm">
+        <label for="signup-name">Enter your full name</label>
+        <input id="signup-name" name="name" type="text" placeholder="Enter your full name" required />
+
+        <label for="signup-email">Enter your email id</label>
+        <input id="signup-email" name="email" type="email" placeholder="Enter your email id" required />
+
+        <label for="signup-password">Create password</label>
+        <input id="signup-password" name="password" type="password" placeholder="Create your password" required />
+
+        <!-- Class dropdown: student 6th class se postgraduate level tak choose kar sakta hai. -->
+        <label for="signup-class">Enter your class</label>
+        <select id="signup-class" name="class" required>
+          <option>Class 6</option>
+          <option>Class 7</option>
+          <option>Class 8</option>
+          <option>Class 9</option>
+          <option>Class 10</option>
+          <option>Class 11</option>
+          <option>Class 12</option>
+          <option>Undergraduate</option>
+          <option>Postgraduate</option>
+        </select>
+
+        <!-- City dropdown: common Tier 1, Tier 2 aur Tier 3 Indian cities grouped hain. -->
+        <label for="signup-city">Enter your city</label>
+        <select id="signup-city" name="city" required>
+            <option>Agra</option>
+            <option>Ajmer</option>
+            <option>Aligarh</option>
+            <option>Bengaluru</option>
+            <option>Bhavnagar</option>
+            <option>Bhopal</option>
+            <option>Bhubaneswar</option>
+            <option>Bilaspur</option>
+            <option>Chandigarh</option>
+            <option>Chennai</option>
+            <option>Coimbatore</option>
+            <option>Dehradun</option>
+            <option>Delhi</option>
+            <option>Deoghar</option>
+            <option>Dhanbad</option>
+            <option>Gaya</option>
+            <option>Gorakhpur</option>
+            <option>Guwahati</option>
+            <option>Gwalior</option>
+            <option>Hubballi</option>
+            <option>Hyderabad</option>
+            <option>Indore</option>
+            <option>Jabalpur</option>
+            <option>Jaipur</option>
+            <option>Jalandhar</option>
+            <option>Jamshedpur</option>
+            <option>Jammu</option>
+            <option>Jodhpur</option>
+            <option>Kanpur</option>
+            <option>Kolhapur</option>
+            <option>Kolkata</option>
+            <option>Kota</option>
+            <option>Lucknow</option>
+            <option>Madurai</option>
+            <option>Mangaluru</option>
+            <option>Mathura</option>
+            <option>Meerut</option>
+            <option>Mumbai</option>
+            <option>Muzaffarpur</option>
+            <option>Mysuru</option>
+            <option>Nagpur</option>
+            <option>Nashik</option>
+            <option>Patna</option>
+            <option>Prayagraj</option>
+            <option>Pune</option>
+            <option>Raipur</option>
+            <option>Rajkot</option>
+            <option>Ranchi</option>
+            <option>Rourkela</option>
+            <option>Salem</option>
+            <option>Shillong</option>
+            <option>Shimla</option>
+            <option>Siliguri</option>
+            <option>Surat</option>
+            <option>Thiruvananthapuram</option>
+            <option>Tiruchirappalli</option>
+            <option>Tirupati</option>
+            <option>Udaipur</option>
+            <option>Vadodara</option>
+            <option>Varanasi</option>
+            <option>Vijayawada</option>
+            <option>Visakhapatnam</option>
+            <option>Warangal</option>
+        </select>
+
+        <button class="primary-button" type="submit">Create account</button>
+        <p class="auth-message" id="signupMessage" aria-live="polite"></p>
+      </form>
+
+      <p class="auth-switch">Already have an account? <a href="login.html">Log in</a></p>
+    </section>
+  </main>
+
+  <!-- JavaScript: signup form ko validate karke demo account save karta hai. -->
+  <script src="auth.js"></script>
+</body>
+</html>

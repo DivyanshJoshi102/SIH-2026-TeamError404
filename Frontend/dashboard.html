@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard - Smart India Hackathon</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard-page">
+  <!-- Header: student dashboard se home aur profile tak simple navigation. -->
+  <header class="header dashboard-header">
+    <a class="logo" href="index.html"><img src="sih-logo.png" alt="SIH logo" /><span class="logo-name">SMART INDIA<br />HACKATHON<br />2026</span></a>
+    <nav class="nav" aria-label="Dashboard navigation">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="profile.html">Profile</a>
+      <a href="missions.html">Missions</a>
+      <a href="index.html#impact">Impact</a>
+    </nav>
+    <a class="login-button" href="index.html">Log out</a>
+  </header>
+
+  <main class="dashboard-main">
+    <!-- Welcome area: student ka current level aur next target dikhata hai. -->
+    <section class="dashboard-welcome">
+      <div>
+        <p class="eyebrow">Student dashboard</p>
+        <h1>Hello, <span id="dashboardName">Student</span>!</h1>
+        <p class="dashboard-muted">Keep going. Your everyday actions are creating real change.</p>
+      </div>
+      <div class="level-box">
+        <span>Current level</span>
+        <strong>Eco Explorer</strong>
+        <div class="progress-bar" id="dashboardProgressBar" aria-label="0 percent progress"><span></span></div>
+        <small id="dashboardProgressText">0 / 1,000 points to next level</small>
+      </div>
+    </section>
+
+    <!-- Summary cards: points, missions aur ranking ka quick overview. -->
+    <section class="dashboard-stats" aria-label="Your progress">
+      <article class="dashboard-stat"><span>Total points</span><strong id="dashboardPoints">0</strong><small id="dashboardWeeklyPoints">Start your first mission</small></article>
+      <article class="dashboard-stat"><span>Missions completed</span><strong id="dashboardMissionCount">0</strong><small>3 missions available</small></article>
+      <article class="dashboard-stat"><span>Your rank</span><strong>#24</strong><small>In your campus</small></article>
+    </section>
+
+    <div class="dashboard-grid">
+      <!-- Mission list: student yahan se next eco challenge start kar sakta hai. -->
+      <section class="dashboard-section">
+        <div class="dashboard-section-heading">
+          <div>
+            <p class="eyebrow">Keep making an impact</p>
+            <h2>Active missions</h2>
+          </div>
+          <a href="missions.html">View all</a>
+        </div>
+        <div class="active-missions">
+          <article class="active-mission">
+            <div class="mission-number">01</div>
+            <div><h3>Plastic-free day</h3><p>Skip single-use plastic for one full day.</p></div>
+            <button class="mission-action" type="button">Start</button>
+          </article>
+          <article class="active-mission">
+            <div class="mission-number">02</div>
+            <div><h3>Plant a friend</h3><p>Care for a plant or tree in your community.</p></div>
+            <button class="mission-action" type="button">Start</button>
+          </article>
+        </div>
+        <p class="dashboard-message" id="dashboardMessage" aria-live="polite"></p>
+      </section>
+
+      <!-- Completed missions: student apne finish kiye hue missions aur points dekh sakta hai. -->
+      <section class="dashboard-section leaderboard-section">
+        <div class="dashboard-section-heading">
+          <div>
+            <p class="eyebrow">Your progress</p>
+            <h2>Completed missions</h2>
+          </div>
+          <a href="missions.html">View all</a>
+        </div>
+        <ul class="leaderboard" id="completed-missions"></ul>
+      </section>
+    </div>
+
+    <!-- Badges: earned aur next reward ka short preview. -->
+    <section class="badges-section">
+      <div class="dashboard-section-heading">
+        <div><p class="eyebrow">Your achievements</p><h2>Badges earned</h2></div>
+      </div>
+      <div class="badges">
+        <article class="badge"><div>🌱</div><h3>First step</h3><p>Completed your first mission</p></article>
+        <article class="badge"><div>♻</div><h3>Plastic saver</h3><p>Finished a plastic-free challenge</p></article>
+        <article class="badge badge-locked"><div>★</div><h3>Green champion</h3><p>350 more points to unlock</p></article>
+      </div>
+    </section>
+  </main>
+
+  <!-- JavaScript: mission button ke simple frontend interaction ke liye. -->
+  <script src="dashboard.js"></script>
+</body>
+</html>

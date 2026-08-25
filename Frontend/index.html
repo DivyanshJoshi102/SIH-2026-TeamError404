@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart India Hackathon - Save Earth</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header: website name aur simple navigation yahan hai. -->
+  <header class="header">
+    <a class="logo" href="#home"><img src="sih-logo.png" alt="SIH logo" /><span class="logo-name">SMART INDIA<br />HACKATHON<br />2026</span></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="missions.html">Missions</a>
+      <a href="features.html">Features</a>
+      <a href="#impact">Impact</a>
+      <a href="#about">About</a>
+    </nav>
+    <!-- Login link: student ko login page par le jaata hai. -->
+    <a class="login-button" href="login.html">Log in</a>
+  </header>
+
+  <main>
+    <!-- Hero: student ko website ka main idea aur action dikhata hai. -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">Small actions. Big impact.</p>
+        Small Actions Today. Make a Greener India Tomorrow. 🌱
+        <h1>Small Actions Today. <br>Make a Greener India <span>Tomorrow. 🌱</span></h1>
+        <p class="hero-text">Complete fun eco missions with your friends, earn points, and turn everyday choices into a healthier future.</p>
+        <button class="primary-button" id="missionButton" type="button">Start a mission</button>
+        <p class="message" id="message" aria-live="polite"></p>
+      </div>
+      <div class="hero-image" role="img" aria-label="Students planting a tree"></div>
+    </section>
+
+    <!-- Stats: platform ka quick impact overview. -->
+    <section class="stats" id="impact" aria-label="Smart India Hackathon impact">
+      <div><strong>12K+</strong><span>Student explorers</span></div>
+      <div><strong>48K</strong><span>Eco missions done</span></div>
+      <div><strong>96K kg</strong><span>CO2 potentially saved</span></div>
+    </section>
+
+    <!-- Missions: students ke liye teen easy starting challenges. -->
+    <section class="missions" id="missions">
+      <div class="section-heading">
+        <p class="eyebrow">Choose your challenge</p>
+        <h2>Start small. Level up.</h2>
+      </div>
+      <div class="mission-grid">
+        <article class="mission-card">
+          <div class="mission-icon">01</div>
+          <h3>Walk or cycle</h3>
+          <p>Choose a cleaner way to reach school or college today.</p>
+          <span>+50 points</span>
+        </article>
+        <article class="mission-card featured-card">
+          <div class="mission-icon">02</div>
+          <h3>Plastic-free day</h3>
+          <p>Skip single-use plastic and share your win with your team.</p>
+          <span>+75 points</span>
+        </article>
+        <article class="mission-card">
+          <div class="mission-icon">03</div>
+          <h3>Plant a friend</h3>
+          <p>Plant, protect, or care for one tree near your community.</p>
+          <span>+100 points</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- Closing section: user ko app join karne ke liye final prompt. -->
+    <section class="closing" id="about">
+      <h2>Your campus can change the world.</h2>
+      <p>Build a greener team, compete with other campuses, and make every point count.</p>
+      <button class="secondary-button" type="button" onclick="document.getElementById('missionButton').click()">Join the movement</button>
+    </section>
+  </main>
+
+  <!-- JavaScript file button interaction ko control karegi. -->
+  <script src="script.js"></script>
+</body>
+</html>

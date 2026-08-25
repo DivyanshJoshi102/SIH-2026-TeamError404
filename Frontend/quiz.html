@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz - Smart India Hackathon</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard-page">
+  <header class="header dashboard-header">
+    <a class="logo" href="index.html"><img src="sih-logo.png" alt="SIH logo" /><span class="logo-name">SMART INDIA<br />HACKATHON<br />2026</span></a>
+    <nav class="nav" aria-label="Quiz navigation">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="missions.html">Missions</a>
+      <a href="quiz.html" aria-current="page">Quiz</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+    <a class="login-button" href="index.html">Log out</a>
+  </header>
+
+  <main class="quiz-main">
+    <section class="quiz-intro">
+      <p class="eyebrow">Learn and earn</p>
+      <h1>Test your green thinking.</h1>
+      <p>Choose your class and topic. Your personalised quiz will appear here.</p>
+    </section>
+
+    <section class="quiz-setup" id="quizSetup" aria-labelledby="setup-title">
+      <div>
+        <p class="eyebrow">Quiz setup</p>
+        <h2 id="setup-title">Set your challenge</h2>
+      </div>
+      <form class="quiz-form" id="quizForm">
+        <label for="quiz-class">Your class</label>
+        <select id="quiz-class" required>
+          <option>Class 6</option>
+          <option>Class 7</option>
+          <option>Class 8</option>
+          <option>Class 9</option>
+          <option>Class 10</option>
+          <option>Class 11</option>
+          <option>Class 12</option>
+          <option>Undergraduate</option>
+          <option>Postgraduate</option>
+        </select>
+        <label for="quiz-topic">Topic</label>
+        <select id="quiz-topic" required>
+          <option value="climate">Climate and energy</option>
+          <option value="waste">Waste and recycling</option>
+          <option value="water">Water conservation</option>
+          <option value="biodiversity">Biodiversity</option>
+        </select>
+        <button class="primary-button" type="submit">Start quiz</button>
+      </form>
+    </section>
+
+    <section class="quiz-panel" id="quizPanel" hidden aria-live="polite">
+      <div class="quiz-panel-heading">
+        <div>
+          <p class="eyebrow" id="quizLabel">Class quiz</p>
+          <h2 id="questionTitle">Question 1</h2>
+        </div>
+        <span class="quiz-progress" id="quizProgress">1 / 3</span>
+      </div>
+      <div class="progress-bar"><span id="quizProgressBar"></span></div>
+      <p class="quiz-question" id="quizQuestion"></p>
+      <div class="quiz-options" id="quizOptions"></div>
+      <p class="quiz-feedback" id="quizFeedback" aria-live="polite"></p>
+      <button class="secondary-button" id="nextQuestion" type="button" hidden>Next question</button>
+    </section>
+
+    <section class="quiz-result" id="quizResult" hidden>
+      <p class="eyebrow">Quiz complete</p>
+      <h2 id="resultTitle">Great work!</h2>
+      <p id="resultText"></p>
+      <button class="primary-button" id="restartQuiz" type="button">Try another quiz</button>
+    </section>
+  </main>
+  <script src="quiz.js"></script>
+</body>
+</html>

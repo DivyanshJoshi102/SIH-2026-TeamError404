@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile - Smart India Hackathon</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard-page">
+  <!-- Header: profile page se student dashboard aur leaderboard par ja sakta hai. -->
+  <header class="header dashboard-header">
+    <a class="logo" href="index.html"><img src="sih-logo.png" alt="SIH logo" /><span class="logo-name">SMART INDIA<br />HACKATHON<br />2026</span></a>
+    <nav class="nav" aria-label="Profile navigation">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="missions.html">Missions</a>
+    </nav>
+    <a class="login-button" href="index.html">Log out</a>
+  </header>
+
+  <main class="profile-main">
+    <!-- Profile intro: student ka naam, level aur total points yahan dikhte hain. -->
+    <section class="profile-hero">
+      <div class="profile-avatar" id="profileAvatar">ST</div>
+      <div>
+        <p class="eyebrow">My profile</p>
+        <h1 id="profileHeading">Student</h1>
+        <p class="profile-muted">Eco Explorer since August 2026</p>
+      </div>
+      <div class="profile-score"><strong id="profilePoints">0</strong><span>Total points</span></div>
+    </section>
+
+    <div class="profile-grid">
+      <!-- Profile form: student apni basic details update kar sakta hai. -->
+      <section class="profile-card">
+        <div class="dashboard-section-heading">
+          <div><p class="eyebrow">Your information</p><h2>Personal details</h2></div>
+        </div>
+        <form class="profile-form" id="profileForm">
+          <label for="profile-name">Full name</label>
+          <input id="profile-name" type="text" required />
+
+          <label for="profile-email">Email address</label>
+          <input id="profile-email" type="email" required />
+
+          <label for="profile-class">Class / course</label>
+          <select id="profile-class" required>
+            <option value="Class 6">Class 6</option>
+            <option>Class 7</option>
+            <option>Class 8</option>
+            <option>Class 9</option>
+            <option>Class 10</option>
+            <option>Class 11</option>
+            <option>Class 12</option>
+            <option>Undergraduate</option>
+            <option>Postgraduate</option>
+          </select>
+
+          <label for="profile-city">City</label>
+          <input id="profile-city" type="text" required />
+
+          <button class="primary-button" type="submit">Save changes</button>
+          <p class="profile-message" id="profileMessage" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <!-- Profile summary: student ke level, missions aur rank ka overview. -->
+      <section class="profile-card profile-summary">
+        <div class="dashboard-section-heading">
+          <div><p class="eyebrow">Your journey</p><h2>Progress</h2></div>
+        </div>
+        <div class="profile-progress-row"><span>Current level</span><strong>Eco Explorer</strong></div>
+        <div class="progress-bar" aria-label="65 percent progress"><span></span></div>
+        <p class="profile-small-text" id="profileProgressText">0 / 1,000 points to next level</p>
+        <div class="profile-summary-stats">
+          <div><strong id="profileMissionCount">0</strong><span>Completed missions</span></div>
+          <div><strong>#24</strong><span>Campus rank</span></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Badges: profile par earned aur locked achievements ka quick view. -->
+    <section class="profile-achievements">
+      <div class="dashboard-section-heading">
+        <div><p class="eyebrow">Your achievements</p><h2>Badges</h2></div>
+        <a href="dashboard.html">Back to dashboard</a>
+      </div>
+      <div class="badges">
+        <article class="badge"><div>🌱</div><h3>First step</h3><p>Completed your first mission</p></article>
+        <article class="badge"><div>♻</div><h3>Plastic saver</h3><p>Finished a plastic-free challenge</p></article>
+        <article class="badge badge-locked"><div>★</div><h3>Green champion</h3><p>350 more points to unlock</p></article>
+      </div>
+    </section>
+  </main>
+
+  <!-- JavaScript: save button par frontend confirmation dikhata hai. -->
+  <script src="profile.js"></script>
+</body>
+</html>

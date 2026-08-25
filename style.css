@@ -1,0 +1,1355 @@
+/* Basic reset: browser ki default spacing ko simple banata hai. */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main colors: in values ko change karke poori website ka color badal sakte hain. */
+:root {
+  --ink: #17352f;
+  --green: #2f765c;
+  --mint: #dcefe2;
+  --yellow: #f7c95b;
+  --cream: #fbf8ef;
+  --white: #ffffff;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1.5;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  /* Wide screen par content ko dono sides ke paas laata hai. */
+  max-width: 1400px;
+  padding: 24px 32px;
+}
+
+.logo {
+  align-items: center;
+  color: var(--ink);
+  display: flex;
+  font-size: 1.35rem;
+  font-weight: bold;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 48px;
+  object-fit: contain;
+  width: 45px;
+}
+
+.logo-name {
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: bold;
+  line-height: 0.95;
+  white-space: nowrap;
+  text-align: center;
+  display: inline-block;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+  margin-left: auto;
+  margin-right: 28px;
+}
+
+.nav a {
+  color: var(--ink);
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.login-button,
+.secondary-button,
+.primary-button {
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.login-button {
+  background: transparent;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  display: inline-block;
+  padding: 10px 18px;
+  text-decoration: none;
+}
+
+.hero {
+  align-items: center;
+  display: grid;
+  gap: 56px;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  max-width: 1400px;
+  min-height: 570px;
+  padding: 70px 32px;
+}
+
+.hero-content {
+  max-width: 530px;
+}
+
+.eyebrow {
+  color: var(--green);
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  line-height: .8;
+}
+
+h1 {
+  font-size: clamp(2rem, 4.5vw, 5.7rem);
+  margin: 18px 0;
+}
+
+h1 span {
+  color: var(--green);
+  font-style: italic;
+}
+
+.hero-text,
+.closing p,
+.mission-card p {
+  color: #557068;
+  font-family: Arial, sans-serif;
+}
+
+.hero-text {
+  font-size: 1.05rem;
+  max-width: 460px;
+}
+
+.primary-button,
+.secondary-button {
+  background: var(--yellow);
+  color: var(--ink);
+  margin-top: 28px;
+  padding: 14px 22px;
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  background: #edb83f;
+}
+
+.message {
+  color: var(--green);
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  margin-top: 12px;
+}
+
+.hero-image {
+  background: linear-gradient(145deg, rgba(23, 53, 47, 0.05), rgba(47, 118, 92, 0.25)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=900&q=80') center/cover;
+  border-radius: 45% 45% 8px 8px;
+  min-height: 450px;
+}
+
+.stats {
+  background: var(--green);
+  color: var(--white);
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 32px max(32px, calc((100% - 1116px) / 2));
+  text-align: center;
+}
+
+.stats strong,
+.stats span {
+  display: block;
+}
+
+.stats strong {
+  color: var(--yellow);
+  font-size: 2rem;
+}
+
+.stats span {
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+}
+
+.missions,
+.closing {
+  margin: auto;
+  max-width: 1400px;
+  padding: 100px 32px;
+}
+
+.section-heading {
+  margin-bottom: 34px;
+}
+
+h2 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  margin-top: 10px;
+}
+
+.mission-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.mission-card {
+  background: var(--white);
+  border: 1px solid #d5e4d9;
+  padding: 26px;
+}
+
+.featured-card {
+  background: var(--mint);
+  border-color: var(--green);
+  transform: translateY(-14px);
+}
+
+.mission-icon {
+  color: var(--green);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.mission-card h3 {
+  font-size: 1.7rem;
+  margin: 40px 0 12px;
+}
+
+.mission-card p {
+  font-size: 0.95rem;
+  min-height: 72px;
+}
+
+.mission-card span {
+  color: var(--green);
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-top: 24px;
+}
+
+.closing {
+  background: var(--ink);
+  color: var(--white);
+  margin-bottom: 40px;
+  max-width: 1400px;
+}
+
+.closing p {
+  color: #c8ded0;
+  margin-top: 16px;
+  max-width: 450px;
+}
+
+/* Auth pages: login aur signup form ko center me simple rakhta hai. */
+.auth-page {
+  min-height: 100vh;
+}
+
+.auth-main {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 90px);
+  padding: 40px 20px;
+}
+
+.auth-card {
+  background: var(--white);
+  border: 1px solid #d5e4d9;
+  max-width: 430px;
+  padding: 42px;
+  width: 100%;
+}
+
+.auth-card h1 {
+  font-size: 3rem;
+  margin: 12px 0;
+}
+
+.auth-subtitle {
+  color: #557068;
+  font-family: Arial, sans-serif;
+  margin-bottom: 28px;
+}
+
+.auth-form label {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+.auth-form input,
+.auth-form select {
+  border: 1px solid #b9cec0;
+  border-radius: 3px;
+  font: 1rem Arial, sans-serif;
+  margin-bottom: 18px;
+  padding: 13px;
+  width: 100%;
+}
+
+.auth-form input:focus,
+.auth-form select:focus {
+  border-color: var(--green);
+  outline: 2px solid var(--mint);
+}
+
+.auth-form .primary-button {
+  margin-top: 6px;
+  width: 100%;
+}
+
+.auth-switch {
+  color: #557068;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  margin-top: 22px;
+  text-align: center;
+}
+
+.auth-switch a {
+  color: var(--green);
+  font-weight: bold;
+}
+
+.auth-message {
+  color: var(--green);
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* Dashboard layout: student ki progress ko clear sections me arrange karta hai. */
+.dashboard-page {
+  background: #f3f5ed;
+}
+
+.dashboard-header {
+  border-bottom: 1px solid #d5e4d9;
+}
+
+.dashboard-main {
+  margin: auto;
+  max-width: 1400px;
+  padding: 55px 32px 90px;
+}
+
+.dashboard-welcome {
+  align-items: end;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.dashboard-welcome h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  margin: 12px 0;
+}
+
+.dashboard-muted,
+.level-box,
+.dashboard-stat,
+.active-mission p,
+.badge p {
+  color: #557068;
+  font-family: Arial, sans-serif;
+}
+
+.level-box {
+  background: var(--mint);
+  border-left: 4px solid var(--green);
+  max-width: 310px;
+  padding: 18px 20px;
+  width: 100%;
+}
+
+.level-box span,
+.level-box strong,
+.level-box small {
+  display: block;
+}
+
+.level-box strong {
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.4rem;
+  margin: 4px 0 12px;
+}
+
+.progress-bar {
+  background: var(--white);
+  height: 8px;
+  margin-bottom: 8px;
+}
+
+.progress-bar span {
+  background: var(--green);
+  height: 100%;
+  width: 65%;
+}
+
+.dashboard-stats {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 58px;
+}
+
+.dashboard-stat,
+.dashboard-section,
+.badge {
+  background: var(--white);
+  border: 1px solid #d5e4d9;
+  padding: 24px;
+}
+
+.dashboard-stat span,
+.dashboard-stat strong,
+.dashboard-stat small {
+  display: block;
+}
+
+.dashboard-stat strong {
+  color: var(--green);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2.7rem;
+  margin: 8px 0;
+}
+
+.dashboard-grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: 1.4fr 1fr;
+}
+
+.dashboard-section-heading {
+  align-items: end;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.dashboard-section-heading h2 {
+  font-size: 2.2rem;
+}
+
+.dashboard-section-heading a {
+  color: var(--green);
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.active-mission {
+  align-items: center;
+  border-top: 1px solid #d5e4d9;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 42px 1fr auto;
+  padding: 20px 0;
+}
+
+.mission-number {
+  color: var(--green);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.active-mission h3 {
+  font-size: 1.35rem;
+}
+
+.active-mission p {
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.mission-action {
+  background: var(--yellow);
+  border: 0;
+  border-radius: 4px;
+  color: var(--ink);
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  padding: 10px 16px;
+}
+
+.dashboard-message {
+  color: var(--green);
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+}
+
+.leaderboard {
+  list-style: none;
+}
+
+.leaderboard li {
+  border-top: 1px solid #d5e4d9;
+  display: flex;
+  font-family: Arial, sans-serif;
+  justify-content: space-between;
+  padding: 17px 0;
+}
+
+.your-rank {
+  background: var(--mint);
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.badges-section {
+  margin-top: 58px;
+}
+
+.badges {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.badge div {
+  color: var(--green);
+  font-size: 2rem;
+}
+
+.badge h3 {
+  font-size: 1.4rem;
+  margin: 12px 0 6px;
+}
+
+.badge p {
+  font-size: 0.85rem;
+}
+
+.badge-locked {
+  background: transparent;
+  opacity: 0.6;
+}
+
+/* Leaderboard page: ranking ko podium aur readable list me show karta hai. */
+.leaderboard-main {
+  margin: auto;
+  max-width: 1100px;
+  padding: 65px 32px 90px;
+}
+
+.leaderboard-intro {
+  align-items: end;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.leaderboard-intro h1 {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  margin: 12px 0;
+}
+
+.leaderboard-intro > div:first-child > p:last-child {
+  color: #557068;
+  font-family: Arial, sans-serif;
+  max-width: 500px;
+}
+
+.competition-box {
+  background: var(--ink);
+  color: var(--white);
+  max-width: 280px;
+  padding: 22px;
+  width: 100%;
+}
+
+.competition-box span,
+.competition-box strong,
+.competition-box small {
+  display: block;
+}
+
+.competition-box span,
+.competition-box small {
+  color: #c8ded0;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+}
+
+.competition-box strong {
+  font-size: 1.35rem;
+  margin: 8px 0;
+}
+
+.leaderboard-filters {
+  border-bottom: 1px solid #d5e4d9;
+  display: flex;
+  gap: 24px;
+  margin-top: 55px;
+}
+
+.filter-button {
+  background: transparent;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  color: #557068;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  padding: 12px 4px;
+}
+
+.active-filter {
+  border-bottom-color: var(--green);
+  color: var(--green);
+}
+
+.podium {
+  align-items: end;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 45px 0 70px;
+}
+
+.podium-card {
+  background: var(--white);
+  border: 1px solid #d5e4d9;
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.first-place {
+  background: var(--mint);
+  border-color: var(--green);
+  padding-bottom: 44px;
+  padding-top: 42px;
+}
+
+.podium-rank {
+  color: var(--green);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.avatar {
+  align-items: center;
+  background: var(--green);
+  border-radius: 50%;
+  color: var(--white);
+  display: flex;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  height: 64px;
+  justify-content: center;
+  margin: 16px auto;
+  width: 64px;
+}
+
+.first-place .avatar {
+  background: var(--yellow);
+  color: var(--ink);
+  height: 76px;
+  width: 76px;
+}
+
+.podium-card h2 {
+  font-size: 1.45rem;
+}
+
+.podium-card p {
+  color: #557068;
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  margin: 7px 0 18px;
+}
+
+.podium-card strong {
+  color: var(--green);
+  font-family: Arial, sans-serif;
+}
+
+.ranking-section {
+  background: var(--white);
+  border: 1px solid #d5e4d9;
+  padding: 28px;
+}
+
+.participant-count {
+  color: #557068;
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+}
+
+.ranking-list {
+  font-family: Arial, sans-serif;
+}
+
+.ranking-row {
+  border-top: 1px solid #d5e4d9;
+  display: flex;
+  justify-content: space-between;
+  padding: 17px 10px;
+}
+
+.ranking-heading {
+  color: #557068;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.ranking-row b {
+  color: var(--green);
+  display: inline-block;
+  margin-right: 22px;
+  width: 20px;
+}
+
+.ranking-row small {
+  background: var(--yellow);
+  border-radius: 3px;
+  font-size: 0.7rem;
+  margin-left: 8px;
+  padding: 4px 7px;
+}
+
+.your-ranking {
+  background: var(--mint);
+}
+
+/* Missions page: cards ko reward aur difficulty ke saath clearly show karta hai. */
+.missions-main {
+  margin: auto;
+  max-width: 1100px;
+  padding: 65px 32px 90px;
+}
+
+.missions-intro h1 {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  margin: 12px 0;
+}
+
+.missions-intro > p:last-child {
+  color: #557068;
+  font-family: Arial, sans-serif;
+  max-width: 500px;
+}
+
+.features-main {
+  margin: auto;
+  max-width: 1100px;
+  padding: 65px 32px 90px;
+}
+
+.features-intro h1 {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  margin: 12px 0;
+}
+
+.features-intro > p:last-child {
+  color: #557068;
+  font-family: Arial, sans-serif;
+  max-width: 540px;
+}
+
+.feature-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 55px;
+}
+
+.feature-card {
+  background: var(--white);
+  border: 1px solid #d5e4d9;
+  padding: 26px;
+}
+
+.feature-card:nth-child(2),
+.feature-card:nth-child(5) {
+  background: var(--mint);
+  border-color: var(--green);
+}
+
+.feature-number {
+  color: var(--green);
+  font: bold 0.85rem Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+.feature-card h2 {
+  font-size: 1.7rem;
+  margin: 35px 0 12px;
+}
+
+.feature-card p {
+  color: #557068;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+}
+
+.mission-page-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 55px;
+}
+
+.mission-page-card {
+  background: var(--white);
+  border: 1px solid #d5e4d9;
+  padding: 26px;
+}
+
+.featured-mission-page-card {
+  background: var(--mint);
+  border-color: var(--green);
+  transform: translateY(-14px);
+}
+
+/* Quiz page: setup, question aur result states ko consistent rakhta hai. */
+.quiz-main {
+  margin: auto;
+  max-width: 900px;
+  padding: 65px 32px 90px;
+}
+
+.quiz-intro h1 {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  margin: 12px 0;
+}
+
+.quiz-intro > p:last-child {
+  color: #557068;
+  font-family: Arial, sans-serif;
+  max-width: 500px;
+}
+
+.quiz-setup,
+.quiz-panel,
+.quiz-result {
+  background: var(--white);
+  border: 1px solid #d5e4d9;
+  margin-top: 55px;
+  padding: 30px;
+}
+
+.quiz-setup h2,
+.quiz-panel h2,
+.quiz-result h2 {
+  font-size: 2.3rem;
+  margin-top: 9px;
+}
+
+.quiz-form {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr 1fr auto;
+  margin-top: 28px;
+}
+
+.quiz-form label {
+  font: bold 0.85rem Arial, sans-serif;
+}
+
+.quiz-form select {
+  border: 1px solid #b9cec0;
+  border-radius: 3px;
+  font: 1rem Arial, sans-serif;
+  padding: 12px;
+}
+
+.quiz-form .primary-button {
+  margin-top: 23px;
+  white-space: nowrap;
+}
+
+.quiz-panel-heading {
+  align-items: end;
+  display: flex;
+  justify-content: space-between;
+}
+
+.quiz-progress {
+  color: var(--green);
+  font: bold 0.85rem Arial, sans-serif;
+}
+
+.quiz-panel .progress-bar {
+  margin: 24px 0 30px;
+}
+
+.quiz-question {
+  font-size: 1.35rem;
+  font-weight: bold;
+}
+
+.quiz-options {
+  display: grid;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.quiz-option {
+  background: var(--cream);
+  border: 1px solid #b9cec0;
+  border-radius: 3px;
+  color: var(--ink);
+  cursor: pointer;
+  font: 1rem Arial, sans-serif;
+  padding: 14px 16px;
+  text-align: left;
+}
+
+.quiz-option:hover:not(:disabled) {
+  border-color: var(--green);
+}
+
+.quiz-option:disabled {
+  cursor: default;
+}
+
+.quiz-option.correct-answer {
+  background: var(--mint);
+  border-color: var(--green);
+}
+
+.quiz-option.wrong-answer {
+  background: #f6d5cf;
+  border-color: #93453a;
+}
+
+.quiz-feedback {
+  color: var(--green);
+  font: 0.9rem Arial, sans-serif;
+  margin-top: 18px;
+}
+
+.quiz-result {
+  background: var(--mint);
+  border-color: var(--green);
+}
+
+.mission-card-top {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.difficulty {
+  border-radius: 3px;
+  font-family: Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 5px 8px;
+}
+
+.easy {
+  background: #dcefe2;
+  color: var(--green);
+}
+
+.medium {
+  background: #fff0c5;
+  color: #87631b;
+}
+
+.hard {
+  background: #f6d5cf;
+  color: #93453a;
+}
+
+.mission-page-card h2 {
+  font-size: 2rem;
+  margin: 50px 0 12px;
+}
+
+.mission-page-card p {
+  color: #557068;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  min-height: 84px;
+}
+
+.mission-reward {
+  align-items: baseline;
+  border-top: 1px solid #d5e4d9;
+  display: flex;
+  gap: 7px;
+  margin-top: 24px;
+  padding-top: 18px;
+}
+
+.mission-reward strong {
+  color: var(--green);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2rem;
+}
+
+.mission-reward span {
+  color: #557068;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+}
+
+.mission-complete-button {
+  background: var(--yellow);
+  border: 0;
+  border-radius: 4px;
+  color: var(--ink);
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  margin-top: 18px;
+  padding: 13px 16px;
+  width: 100%;
+}
+
+.mission-complete-button:disabled {
+  background: #c9d8ce;
+  cursor: default;
+}
+
+.mission-page-message {
+  color: var(--green);
+  font-family: Arial, sans-serif;
+  margin-top: 22px;
+  text-align: center;
+}
+
+/* Profile page: identity, editable details aur progress ko do columns me rakhta hai. */
+.profile-main {
+  margin: auto;
+  max-width: 1100px;
+  padding: 65px 32px 90px;
+}
+
+.profile-hero {
+  align-items: center;
+  display: flex;
+  gap: 22px;
+  margin-bottom: 45px;
+}
+
+.profile-avatar {
+  align-items: center;
+  background: var(--yellow);
+  border-radius: 50%;
+  color: var(--ink);
+  display: flex;
+  font-family: Arial, sans-serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+  height: 92px;
+  justify-content: center;
+  width: 92px;
+}
+
+.profile-hero h1 {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  margin: 8px 0;
+}
+
+.profile-muted,
+.profile-small-text {
+  color: #557068;
+  font-family: Arial, sans-serif;
+}
+
+.profile-score {
+  margin-left: auto;
+  text-align: right;
+}
+
+.profile-score strong {
+  color: var(--green);
+  display: block;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2.8rem;
+}
+
+.profile-score span {
+  color: #557068;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+}
+
+.profile-grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.profile-card {
+  background: var(--white);
+  border: 1px solid #d5e4d9;
+  padding: 28px;
+}
+
+.profile-card h2 {
+  font-size: 2.2rem;
+}
+
+.profile-form label {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin: 16px 0 7px;
+}
+
+.profile-form input,
+.profile-form select {
+  border: 1px solid #b9cec0;
+  border-radius: 3px;
+  font: 1rem Arial, sans-serif;
+  padding: 12px;
+  width: 100%;
+}
+
+.profile-form input:focus,
+.profile-form select:focus {
+  border-color: var(--green);
+  outline: 2px solid var(--mint);
+}
+
+.profile-form .primary-button {
+  margin-top: 24px;
+}
+
+.profile-message {
+  color: var(--green);
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  margin-top: 12px;
+}
+
+.profile-progress-row {
+  display: flex;
+  font-family: Arial, sans-serif;
+  justify-content: space-between;
+  margin: 24px 0 12px;
+}
+
+.profile-progress-row strong {
+  color: var(--green);
+}
+
+.profile-summary .progress-bar {
+  margin-bottom: 10px;
+}
+
+.profile-summary-stats {
+  border-top: 1px solid #d5e4d9;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 35px;
+  padding-top: 22px;
+}
+
+.profile-summary-stats strong,
+.profile-summary-stats span {
+  display: block;
+}
+
+.profile-summary-stats strong {
+  color: var(--green);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2rem;
+}
+
+.profile-summary-stats span {
+  color: #557068;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+}
+
+.profile-achievements {
+  margin-top: 58px;
+}
+
+/* Mobile layout: chhoti screen par columns ek ke neeche ek aa jaate hain. */
+@media (max-width: 700px) {
+  .header {
+    padding: 18px 20px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 55px 20px;
+  }
+
+  .hero-image {
+    min-height: 330px;
+    width: 100%;
+  }
+
+  .stats,
+  .mission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    gap: 28px;
+  }
+
+  .missions,
+  .closing {
+    padding: 65px 20px;
+  }
+
+  .features-main {
+    padding: 55px 20px 65px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+    margin-top: 38px;
+  }
+
+  .featured-card {
+    transform: none;
+  }
+
+  .auth-card {
+    padding: 30px 22px;
+  }
+
+  .dashboard-main {
+    padding: 40px 20px 65px;
+  }
+
+  .dashboard-welcome,
+  .dashboard-grid {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dashboard-stats,
+  .badges {
+    grid-template-columns: 1fr;
+  }
+
+  .level-box {
+    max-width: none;
+  }
+
+  .leaderboard-main {
+    padding: 40px 20px 65px;
+  }
+
+  .leaderboard-intro,
+  .podium {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .competition-box {
+    max-width: none;
+  }
+
+  .leaderboard-filters {
+    gap: 12px;
+    justify-content: space-between;
+  }
+
+  .podium {
+    align-items: stretch;
+  }
+
+  .first-place {
+    order: -1;
+  }
+
+  .ranking-section {
+    padding: 22px 16px;
+  }
+
+  .profile-main {
+    padding: 40px 20px 65px;
+  }
+
+  .profile-hero {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .profile-score {
+    margin-left: 114px;
+    text-align: left;
+  }
+
+  .profile-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .missions-main {
+    padding: 40px 20px 65px;
+  }
+
+  .quiz-main {
+    padding: 40px 20px 65px;
+  }
+
+  .quiz-setup,
+  .quiz-panel,
+  .quiz-result {
+    margin-top: 38px;
+    padding: 22px;
+  }
+
+  .quiz-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .quiz-form .primary-button {
+    margin-top: 14px;
+  }
+
+  .mission-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-mission-page-card {
+    transform: none;
+  }
+}

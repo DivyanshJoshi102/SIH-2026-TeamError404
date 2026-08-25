@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Missions - Smart India Hackathon</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard-page">
+  <!-- Header: student missions, dashboard aur leaderboard ke beech move kar sakta hai. -->
+  <header class="header dashboard-header">
+    <a class="logo" href="index.html"><img src="sih-logo.png" alt="SIH logo" /><span class="logo-name">SMART INDIA<br />HACKATHON<br />2026</span></a>
+    <nav class="nav" aria-label="Missions navigation">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="missions.html" aria-current="page">Missions</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+    <a class="login-button" href="index.html">Log out</a>
+  </header>
+
+  <main class="missions-main">
+    <!-- Intro: available eco missions ka purpose aur reward explain karta hai. -->
+    <section class="missions-intro">
+      <p class="eyebrow">Your next challenge</p>
+      <h1>Turn actions into impact.</h1>
+      <p>Complete simple environmental missions and collect points for your campus.</p>
+    </section>
+
+    <!-- Mission cards: har card me action, difficulty aur points reward diya gaya hai. -->
+    <section class="mission-page-grid" aria-label="Available missions">
+      <article class="mission-page-card">
+        <div class="mission-card-top"><span class="mission-icon">01</span><span class="difficulty easy">Easy</span></div>
+        <h2>Walk or cycle</h2>
+        <p>Choose a cleaner way to reach school or college today instead of taking a car or bike.</p>
+        <div class="mission-reward"><strong>+50</strong><span>points</span></div>
+        <button class="mission-complete-button" data-mission="walk" data-points="50" type="button">Complete mission</button>
+      </article>
+      <article class="mission-page-card featured-mission-page-card">
+        <div class="mission-card-top"><span class="mission-icon">02</span><span class="difficulty medium">Medium</span></div>
+        <h2>Plastic-free day</h2>
+        <p>Skip single-use plastic for one full day and choose reusable alternatives.</p>
+        <div class="mission-reward"><strong>+75</strong><span>points</span></div>
+        <button class="mission-complete-button" data-mission="plastic" data-points="75" type="button">Complete mission</button>
+      </article>
+      <article class="mission-page-card">
+        <div class="mission-card-top"><span class="mission-icon">03</span><span class="difficulty hard">Hard</span></div>
+        <h2>Plant a friend</h2>
+        <p>Plant, protect, or care for one tree near your home, school, or college.</p>
+        <div class="mission-reward"><strong>+100</strong><span>points</span></div>
+        <button class="mission-complete-button" data-mission="plant" data-points="100" type="button">Complete mission</button>
+      </article>
+    </section>
+    <p class="mission-page-message" id="missionPageMessage" aria-live="polite"></p>
+  </main>
+
+  <!-- JavaScript: complete button points save aur status update karta hai. -->
+  <script src="missions.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mission Details - Smart India Hackathon</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard-page">
+  <header class="header dashboard-header">
+    <a class="logo" href="index.html"><img src="sih-logo.png" alt="SIH logo" /><span class="logo-name">SMART INDIA<br />HACKATHON<br />2026</span></a>
+    <nav class="nav" aria-label="Mission details navigation">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="missions.html" aria-current="page">Missions</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+    <a class="login-button" href="index.html">Log out</a>
+  </header>
+
+  <main class="mission-details-main">
+    <section class="mission-details-header">
+      <p class="eyebrow">Mission details</p>
+      <h1 id="missionDetailTitle">Walk or cycle</h1>
+      <p class="mission-detail-meta">
+        <span id="missionDetailDifficulty" class="difficulty easy">Easy</span>
+        <span id="missionDetailReward">+50 points</span>
+      </p>
+    </section>
+
+    <section class="mission-details-grid">
+      <article class="mission-detail-card">
+        <h2>Why this matters</h2>
+        <p id="missionDetailDescription"></p>
+        <ul id="missionDetailSteps" class="mission-detail-steps"></ul>
+      </article>
+
+      <aside class="mission-detail-side">
+        <div class="mission-progress-box">
+          <span>Mission progress</span>
+          <strong id="missionProgressCount">0 / 3</strong>
+          <small id="missionProgressText">0 missions completed</small>
+        </div>
+
+        <div class="mission-detail-points">
+          <span>Reward</span>
+          <strong id="missionDetailRewardBig">+50</strong>
+          <small>points</small>
+        </div>
+
+        <button id="missionDetailButton" class="mission-complete-button" type="button">Complete mission</button>
+        <p class="mission-page-message" id="missionPageMessage" aria-live="polite"></p>
+      </aside>
+    </section>
+  </main>
+
+  <script src="mission-details.js"></script>
+</body>
+</html>

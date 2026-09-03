@@ -1,41 +1,86 @@
 // Saved account aur missions ko dashboard par load karta hai.
 const account = JSON.parse(localStorage.getItem('greenQuestAccount') || 'null');
+const savedPoints = Number(localStorage.getItem('studentPoints') || 0);
 const completedMissions = JSON.parse(localStorage.getItem('completedMissions') || '[]');
-const studentPoints = Number(localStorage.getItem('studentPoints') || 0);
-const missionDetails = {
-  walk: { name: 'Walk or cycle', points: 50 },
-  plastic: { name: 'Plastic-free day', points: 75 },
-  plant: { name: 'Plant a friend', points: 100 }
-};
+const dailyMissionPoints = { bottle: 20, waste: 30, plant: 50 };
 
-// Account available ho to signup wala naam welcome heading me dikhata hai.
 if (account) {
   document.getElementById('dashboardName').textContent = account.name.split(' ')[0];
 }
 
-// Points, mission count aur level progress saved data ke according update karta hai.
-document.getElementById('dashboardPoints').textContent = studentPoints;
-document.getElementById('dashboardMissionCount').textContent = completedMissions.length;
-document.getElementById('dashboardWeeklyPoints').textContent = studentPoints > 0 ? `+${studentPoints} this week` : 'Start your first mission';
-document.getElementById('dashboardProgressText').textContent = `${studentPoints} / 1,000 points to next level`;
-document.getElementById('dashboardProgressBar').firstElementChild.style.width = `${Math.min(studentPoints / 10, 100)}%`;
-document.getElementById('dashboardProgressBar').setAttribute('aria-label', `${Math.min(studentPoints / 10, 100)} percent progress`);
+document.getElementById('dashboardProgressText').textContent = `${savedPoints} / 1,000 points to next level`;
+document.getElementById('dashboardProgressBar').firstElementChild.style.width = `${Math.min(savedPoints / 10, 100)}%`;
+document.getElementById('impactActions').textContent = completedMissions.length + Number(localStorage.getItem('completedDailyMissions') ? JSON.parse(localStorage.getItem('completedDailyMissions')).length : 0);
 
-// Completed missions ki list ko saved mission IDs se banata hai.
-const completedMissionList = document.getElementById('completed-missions');
-completedMissions.forEach(function (missionId) {
-  const mission = missionDetails[missionId];
-  const listItem = document.createElement('li');
-  listItem.innerHTML = `<span>${mission.name}<br><small>Completed mission</small></span><strong>+${mission.points}</strong>`;
-  completedMissionList.appendChild(listItem);
-});
-
-// Start button click hone par missions page open karta hai.
-const missionButtons = document.querySelectorAll('.mission-action');
-const dashboardMessage = document.getElementById('dashboardMessage');
-
-missionButtons.forEach(function (button) {
+document.querySelectorAll('.start-daily').forEach(function (button) {
   button.addEventListener('click', function () {
-    window.location.href = 'missions.html';
+    const missionId = button.dataset.mission;
+    const completedDaily = JSON.parse(localStorage.getItem('completedDailyMissions') || '[]');
+    if (!completedDaily.includes(missionId)) {
+      completedDaily.push(missionId);
+      localStorage.setItem('completedDailyMissions', JSON.stringify(completedDaily));
+      localStorage.setItem('studentPoints', String(Number(localStorage.getItem('studentPoints') || 0) + dailyMissionPoints[missionId]));
+    }
+    button.textContent = 'Mission complete';
+    button.disabled = true;
+    document.getElementById('dashboardMessage').textContent = `Great work! You earned ${dailyMissionPoints[missionId]} XP.`;
   });
 });
+
+const streakCalendar = document.getElementById('streakCalendar');
+for (let day = 1; day <= 21; day += 1) {
+  const dayCell = document.createElement('span');
+  dayCell.textContent = day;
+  dayCell.className = day <= 7 ? 'complete-day' : '';
+  dayCell.setAttribute('aria-label', `Day ${day}${day <= 7 ? ', completed' : ', remaining'}`);
+  streakCalendar.appendChild(dayCell);
+}
+
+const proofPhoto = document.getElementById('proofPhoto');
+proofPhoto.addEventListener('change', function () {
+  const file = proofPhoto.files[0];
+  if (!file) return;
+  document.getElementById('proofLabel').textContent = file.name;
+  const preview = document.getElementById('proofPreview');
+  preview.src = URL.createObjectURL(file);
+  preview.hidden = false;
+});
+
+document.getElementById('submitProof').addEventListener('click', function () {
+  document.getElementById('proofStatus').textContent = 'Pending';
+  document.getElementById('proofStatus').className = 'status-pill pending';
+  document.getElementById('proofMessage').textContent = 'Proof submitted. A teacher will review it soon.';
+});
+
+document.querySelectorAll('.map-marker').forEach(function (marker) {
+  marker.addEventListener('click', function () {
+    document.getElementById('mapTooltip').textContent = `${marker.dataset.city}: ${marker.dataset.actions} actions completed`;
+  });
+});
+
+document.querySelectorAll('.approve-button, .reject-button').forEach(function (button) {
+  button.addEventListener('click', function () {
+    const submission = button.closest('article');
+    submission.classList.add('reviewed');
+    submission.querySelector('.approve-button').disabled = true;
+    submission.querySelector('.reject-button').disabled = true;
+    document.getElementById('teacherMessage').textContent = button.classList.contains('approve-button')
+      ? 'Submission approved and XP awarded.'
+      : 'Submission rejected with feedback requested.';
+  });
+});
+
+function updateConnectionStatus() {
+  const indicator = document.getElementById('offline-sync');
+  indicator.className = navigator.onLine ? 'offline-indicator' : 'offline-indicator is-offline';
+  indicator.innerHTML = `<span></span>${navigator.onLine ? 'All progress synced' : 'Offline Mode - Progress saved locally'}`;
+  if (navigator.onLine) {
+    indicator.classList.add('is-syncing');
+    indicator.innerHTML = '<span></span>Syncing...';
+    window.setTimeout(function () { indicator.className = 'offline-indicator'; indicator.innerHTML = '<span></span>All progress synced'; }, 1200);
+  }
+}
+
+window.addEventListener('online', updateConnectionStatus);
+window.addEventListener('offline', updateConnectionStatus);
+updateConnectionStatus();

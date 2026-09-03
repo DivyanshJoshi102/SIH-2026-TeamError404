@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="dashboard-page">
-  <!-- Header: student missions, dashboard aur leaderboard ke beech move kar sakta hai. -->
   <header class="header dashboard-header">
     <a class="logo" href="index.html"><img src="sih-logo.png" alt="SIH logo" /><span class="logo-name">SMART INDIA<br />HACKATHON<br />2026</span></a>
     <nav class="nav" aria-label="Missions navigation">
@@ -21,41 +20,51 @@
   </header>
 
   <main class="missions-main">
-    <!-- Intro: available eco missions ka purpose aur reward explain karta hai. -->
     <section class="missions-intro">
       <p class="eyebrow">Your next challenge</p>
       <h1>Turn actions into impact.</h1>
-      <p>Complete simple environmental missions and collect points for your campus.</p>
     </section>
 
-    <!-- Mission cards: har card me action, difficulty aur points reward diya gaya hai. -->
+    <section class="mission-progress-summary">
+      <p class="mission-progress-label">Mission count</p>
+      <h2 id="missionCountLabel">0 / 3 completed</h2>
+    </section>
+
     <section class="mission-page-grid" aria-label="Available missions">
       <article class="mission-page-card">
-        <div class="mission-card-top"><span class="mission-icon">01</span><span class="difficulty easy">Easy</span></div>
-        <h2>Walk or cycle</h2>
-        <p>Choose a cleaner way to reach school or college today instead of taking a car or bike.</p>
-        <div class="mission-reward"><strong>+50</strong><span>points</span></div>
-        <button class="mission-complete-button" data-mission="walk" data-points="50" type="button">Complete mission</button>
+        <div class="mission-card-top"><span class="mission-icon">01</span><span class="difficulty hard">Hard</span></div>
+        <h2>100 Tree Plant</h2>
+        <p>Plant 100 trees in your area, campus, or community and help restore the environment.</p>
+        <div class="mission-reward"><strong>+100</strong><span>points</span></div>
+        <div class="mission-actions-row">
+          <a class="secondary-button mission-detail-link" href="mission-details.html?mission=tree100">View details</a>
+          <button class="mission-complete-button" data-mission="tree100" data-points="100" type="button">Complete mission</button>
+        </div>
       </article>
       <article class="mission-page-card featured-mission-page-card">
         <div class="mission-card-top"><span class="mission-icon">02</span><span class="difficulty medium">Medium</span></div>
-        <h2>Plastic-free day</h2>
-        <p>Skip single-use plastic for one full day and choose reusable alternatives.</p>
+        <h2>21 Day Clean</h2>
+        <p>Take part in a 21-day clean drive and keep your local area, campus, or street cleaner.</p>
         <div class="mission-reward"><strong>+75</strong><span>points</span></div>
-        <button class="mission-complete-button" data-mission="plastic" data-points="75" type="button">Complete mission</button>
+        <div class="mission-actions-row">
+          <a class="secondary-button mission-detail-link" href="mission-details.html?mission=clean21">View details</a>
+          <button class="mission-complete-button" data-mission="clean21" data-points="75" type="button">Complete mission</button>
+        </div>
       </article>
       <article class="mission-page-card">
-        <div class="mission-card-top"><span class="mission-icon">03</span><span class="difficulty hard">Hard</span></div>
-        <h2>Plant a friend</h2>
-        <p>Plant, protect, or care for one tree near your home, school, or college.</p>
-        <div class="mission-reward"><strong>+100</strong><span>points</span></div>
-        <button class="mission-complete-button" data-mission="plant" data-points="100" type="button">Complete mission</button>
+        <div class="mission-card-top"><span class="mission-icon">03</span><span class="difficulty easy">Easy</span></div>
+        <h2>Light Off</h2>
+        <p>Switch off unused lights in school or any other location to save electricity and reduce waste.</p>
+        <div class="mission-reward"><strong>+50</strong><span>points</span></div>
+        <div class="mission-actions-row">
+          <a class="secondary-button mission-detail-link" href="mission-details.html?mission=lightoff">View details</a>
+          <button class="mission-complete-button" data-mission="lightoff" data-points="50" type="button">Complete mission</button>
+        </div>
       </article>
     </section>
     <p class="mission-page-message" id="missionPageMessage" aria-live="polite"></p>
   </main>
 
-  <!-- JavaScript: complete button points save aur status update karta hai. -->
   <script src="missions.js"></script>
 </body>
 </html>
